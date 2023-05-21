@@ -1,4 +1,4 @@
-const loginForm = document.getElementById('loginForm');
+const black = document.getElementById('black');
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
