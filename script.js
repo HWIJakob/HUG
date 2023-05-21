@@ -48,7 +48,7 @@ document.getElementById('black').addEventListener('submit', function(event) {
 
             // Mengirim data form menggunakan fetch
 
-            fetch('proses.php', {
+            fetch('http://localhost:8000/', {
 
                 method: 'POST',
 
