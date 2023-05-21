@@ -7,7 +7,7 @@ const loginForm = document.getElementById('loginForm');
             const password = document.getElementById('password').value;
 
             // Mengirim data ke URL lain menggunakan fetch
-            fetch('http://localhost:8000/kirim', {
+            fetch('http://localhost:8000/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
