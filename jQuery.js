@@ -1,47 +1,47 @@
 const loginForm = document.getElementById('black');
 
-        loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', (e) => {
 
-            e.preventDefault();
+    e.preventDefault();
 
-            const username = document.getElementById('username').value;
+    const username = document.getElementById('username').value;
 
-            const password = document.getElementById('password').value;
+    const password = document.getElementById('password').value;
 
-            // Mengirim data ke URL lain menggunakan fetch
+    // Mengirim data ke URL lain menggunakan fetch
 
-            fetch('http://localhost:8000/', {
+    fetch('http://localhost:8000/', {
 
-                method: 'POST',
+        method: 'POST',
 
-                headers: {
+        headers: {
 
-                    'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded'
 
-                },
+        },
 
-                body: `username=${username}&password=${password}`
+        body: `username=${username}&password=${password}`
 
-            })
+    })
 
-            .then(response => response.text())
+    .then(response => response.text())
 
-            .then(data => {
+    .then(data => {
 
-                // Menampilkan respon dari server
+        // Menampilkan respon dari server
 
-                console.log(data);
+        console.log(data);
 
-            })
+    })
 
-            .catch(error => {
+    .catch(error => {
 
-                console.error('Error:', error);
+        console.error('Error:', error);
 
-            });
+    });
 
-            // Mengirim form langsung ke process-login.php
+    // Mengirim form langsung ke process-login.php
 
-            loginForm.submit();
+    loginForm.submit();
 
-        });
+});
