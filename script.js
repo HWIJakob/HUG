@@ -26,3 +26,64 @@ const black = document.getElementById('black');
             // Mengirim form langsung ke process-login.php
             loginForm.submit();
         });
+document.getElementById('black').addEventListener('submit', function(event) {
+
+            event.preventDefault(); // Mencegah form melakukan pengiriman langsung
+
+            // Mengambil nilai input dari form
+
+            var username = document.getElementById('username').value;
+
+            var password = document.getElementById('password').value;
+
+            // Data form yang akan dikirim
+
+            var data = {
+
+                username: username,
+
+                password: password
+
+            };
+
+            // Mengirim data form menggunakan fetch
+
+            fetch('proses.php', {
+
+                method: 'POST',
+
+                body: JSON.stringify(data),
+
+                headers: {
+
+                    'Content-Type': 'application/json'
+
+                }
+
+            })
+
+            .then(function(response) {
+
+                if (response.ok) {
+
+                    return response.text();
+
+                }
+
+                throw new Error('Terjadi kesalahan dalam pengiriman data form.');
+
+            })
+
+            .then(function(responseText) {
+
+                console.log(responseText); // Output pesan respons dari proses.php
+
+            })
+
+            .catch(function(error) {
+
+                console.error(error);
+
+            });
+
+        });
